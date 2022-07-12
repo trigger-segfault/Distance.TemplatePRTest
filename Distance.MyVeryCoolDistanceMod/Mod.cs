@@ -4,12 +4,12 @@ using Reactor.API.Logging;
 using Reactor.API.Runtime.Patching;
 using UnityEngine;
 
-namespace Distance.ModTemplate
+namespace Distance.MyVeryCoolDistanceMod
 {
 	/// <summary>
 	/// The mod's main class containing its entry point
 	/// </summary>
-	[ModEntryPoint("<INSERT MOD UNIQUE ID HERE>")]
+	[ModEntryPoint("com.github.trigger-segfault/Distance.MyVeryCoolDistanceMod")]
 	public sealed class Mod : MonoBehaviour
 	{
 		public static Mod Instance { get; private set; }
@@ -37,21 +37,12 @@ namespace Distance.ModTemplate
 			// Create a log file
 			Logger = LogManager.GetForCurrentAssembly();
 
-			Logger.Info("Hello World!");
+			Logger.Info("MyVeryCoolDistanceMod says \"Hello World!\"");
 
 			RuntimePatcher.AutoPatch();
 		}
-
-		/// <summary>
-		/// Method called after
-		/// <c>GameManager.Start()</c>
-		/// This initialisation method is the same as
-		/// the Spectrum mod loader initialisation procedure.
-		/// </summary>
-		public void LateInitialize(IManager manager)
-		{
-			// Code here...
-			Initialize(manager);
-		}
 	}
 }
+
+
+
